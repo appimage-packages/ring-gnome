@@ -1,0 +1,97 @@
+name: ring-gnome
+binary: ring-gnome
+packages:
+  - libpulse-dev
+  - libsamplerate0-dev
+  - libgsm1-dev
+  - libspeex-dev
+  - libtool
+  - libdbus-1-dev
+  - libasound2-dev
+  - libopus-dev
+  - libspeexdsp-dev
+  - libexpat1-dev
+  - libpcre3-dev
+  - libyaml-cpp-dev
+  - libboost-dev
+  - libdbus-c++-dev
+  - libsndfile1-dev
+  - libsrtp-dev
+  - libjack-dev
+  - libupnp-dev
+  - libudev-dev
+  - yasm
+  - uuid-dev
+  - libgnutls-dev
+  - libjsoncpp-dev
+  - libva-dev
+  - libgtk-3-0
+  - libgtk-3-dev
+  - libclutter-gtk-1.0-0
+  - gnome-icon-theme-symbolic
+  - libebook-1.2-14
+  - libnotify4
+frameworks:
+  build_kf5: true
+  frameworks:
+    - extra-cmake-modules
+    - kcoreaddons
+    - ki18n
+    - kitemviews
+    - kconfig
+    - polkit-qt-1
+    - kauth
+    - kcodecs
+    - karchive
+    - kdoctools
+    - kguiaddons
+    - kwidgetsaddons
+    - kconfigwidgets
+    - kiconthemes
+    - kcompletion
+    - kwindowsystem
+    - kcrash
+    - kdbusaddons
+    - kservice
+    - sonnet
+    - ktextwidgets
+    - kglobalaccel
+    - attica
+    - kxmlgui
+    - solid
+    - kbookmarks
+    - kjobwidgets
+    - phonon
+    - phonon-gstreamer
+    - knotifications
+    - gpgmepp
+    - kwallet
+    - kio
+    - knewstuff
+    - breeze-icons
+    - kinit
+    - knotifyconfig
+    - kcontacts
+    - kitemmodels
+    - akonadi
+    - akonadicontacts
+type: git
+url: https://gerrit-ring.savoirfairelinux.com/ring-daemon
+buildsystem: custom
+buildoptions: /bin/bash /in/scripts/ring.sh
+dependencies:
+  - cpan:
+      build:
+        buildsystem: custom
+        buildoptions: cpan URI::Escape
+      depname: cpan
+      source:
+        type: none
+        url: ''
+  - x265:
+      build:
+        buildsystem: custom
+        buildoptions: /bin/bash /in/scripts/x265.sh
+      source:
+        type: none
+        url: ''
