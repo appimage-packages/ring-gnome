@@ -3,7 +3,7 @@ set -e
 set -x
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
 export PKG_CONFIG="pkg-config --static"
-export  CXXFLAGS="-std=c++11 -lrestbed"
+
 add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get update && apt-get -y install gcc-4.9 g++-4.9
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
 cd contrib
@@ -20,7 +20,7 @@ make
 else
 	error_exit "$LINENO: An error has occurred.. Aborting."
 fi
-
+export  CXXFLAGS="-std=c++11 -lrestbed"
 cd ../../
 if ./autogen.sh; then
 ./configure --prefix=/opt/usr
