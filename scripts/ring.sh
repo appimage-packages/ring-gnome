@@ -11,7 +11,7 @@ cd contrib
 rm -rfv build
 mkdir build
 cd build
-if ../bootstrap --prefix=/opt/usr --enable-nettle --enable-gnutls --enable-x264 --enable-ffmpeg --enable-restbed; then
+if ../bootstrap --prefix=/usr --enable-nettle --enable-gnutls --enable-x264 --enable-ffmpeg --enable-restbed; then
 make .nettle .gnutls .x264 .ffmpeg .restbed
 
 make
