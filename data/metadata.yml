@@ -91,7 +91,7 @@ dependencies:
   - asio:
       build:
         buildsystem: custom
-        buildoptions: 'cd asio && ./autogen && ./configure --prefix=/opt/usr && make V=1 -j8 && make install'
+        buildoptions: 'cd asio && ./autogen.sh && ./configure --prefix=/opt/usr && make V=1 -j8 && make install'
       depname: asio
       source:
         type: git
