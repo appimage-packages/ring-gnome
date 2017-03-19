@@ -90,12 +90,12 @@ dependencies:
         url: ''
   - asio:
       build:
-        buildsystem: autogen
-        buildoptions: ''
+        buildsystem: custom
+        buildoptions: 'cd asio && ./autogen && ./configure --prefix=/opt/usr && make V=1 -j8 && make install'
       depname: asio
       source:
         type: git
-        url: https://github.com/chriskohlhoff/asio/tree/master/asio
+        url: https://github.com/chriskohlhoff/asio
         branch: master
   - restbed:
       build:
