@@ -100,7 +100,7 @@ dependencies:
   - restbed:
       build:
         buildsystem: cmake
-        buildoptions: '-DBUILD_SHARED=on'
+        buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DBUILD_TESTING=OFF -DBUILD_SHARED=on'
       depname: restbed
       source:
         type: git

@@ -20,7 +20,8 @@
 export PATH=/opt/usr/bin:/home/jenkins/.rbenv/bin:/home/jenkins/.rbenv/shims:$PATH
 export WORKSPACE=`pwd`
 echo $WORKSPACE
-
+add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get update && apt-get -y install gcc-4.9 g++-4.9
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
 add-apt-repository -y ppa:gnome3-team/gnome3-staging
 apt-get update
 
