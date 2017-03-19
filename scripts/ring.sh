@@ -21,7 +21,7 @@ else
 	error_exit "$LINENO: An error has occurred.. Aborting."
 fi
 
-export CPATH=/opt/usr/include:/usr/include
+export CPATH=/opt/usr/include:/opt/usr/include/corvusoft/restbed:/usr/include
 
 cd ../../
 if ./autogen.sh; then
