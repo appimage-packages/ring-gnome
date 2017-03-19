@@ -101,7 +101,7 @@ dependencies:
       build:
         buildsystem: custom
         buildoptions: 'mv /app/src/kashmir-dependency /opt/usr/include/kashmir'
-      depname: kashmir
+      depname: kashmir-dependency
       source:
         type: git
         url: https://github.com/Corvusoft/kashmir-dependency
