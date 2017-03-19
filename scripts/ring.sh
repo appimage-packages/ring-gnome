@@ -11,7 +11,7 @@ cd contrib
 rm -rfv build
 mkdir build
 cd build
-if ../bootstrap --prefix=/usr --enable-nettle --enable-gnutls --enable-x264 --enable-ffmpeg --enable-restbed; then
+if ../bootstrap --prefix=/opt/usr --enable-nettle --enable-gnutls --enable-x264 --enable-ffmpeg --enable-restbed; then
 make .nettle .gnutls .x264 .ffmpeg .restbed
 
 make
@@ -20,7 +20,9 @@ make
 else
 	error_exit "$LINENO: An error has occurred.. Aborting."
 fi
-export  CXXFLAGS="-std=c++11 -lrestbed"
+
+export CPATH=/opt/usr/include:/usr/include
+
 cd ../../
 if ./autogen.sh; then
 ./configure --prefix=/opt/usr
