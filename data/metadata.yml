@@ -88,10 +88,39 @@ dependencies:
       source:
         type: none
         url: ''
+  - asio:
+      build:
+        buildsystem: autogen
+        buildoptions: ''
+      source:
+        type: git
+        url: https://github.com/chriskohlhoff/asio#commit=14db6371b338339383aacaed29b0fa352259645a
+  - restbed:
+      build:
+        buildsystem: cmake
+        buildoptions: '-DBUILD_SHARED=on'
+      source:
+        type: git
+        url: https://github.com/Corvusoft/restbed
+  - x264:
+      build:
+        buildsystem: custom
+        buildoptions: /bin/bash /in/scripts/x264.sh
+      source:
+        type: none
+        url: ''
   - x265:
       build:
         buildsystem: custom
         buildoptions: /bin/bash /in/scripts/x265.sh
+      source:
+        type: none
+        url: ''
+  - ffmpeg:
+      build:
+        buildsystem: custom
+        buildoptions: /bin/bash /in/scripts/ffmpeg.sh
+      depname: ffmepg
       source:
         type: none
         url: ''
