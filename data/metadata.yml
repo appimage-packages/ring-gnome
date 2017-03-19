@@ -97,6 +97,15 @@ dependencies:
         type: git
         url: https://github.com/chriskohlhoff/asio
         branch: master
+  - kashmir:
+      build:
+        buildsystem: custom
+        buildoptions: 'cp -r "/app/src/kashmir" "/opt/usr/include/"'
+      depname: kashmir
+      source:
+        type: git
+        url: https://github.com/Corvusoft/kashmir-dependency
+        branch: master
   - restbed:
       build:
         buildsystem: cmake
