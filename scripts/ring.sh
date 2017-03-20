@@ -10,7 +10,7 @@ cd contrib
 rm -rfv build
 mkdir build
 cd build
-if ../bootstrap --prefix=/opt/usr; then
+if ../bootstrap --prefix=/opt/usr --disable-restbed --disable-boost; then
 
 make
 

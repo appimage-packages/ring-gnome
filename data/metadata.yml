@@ -88,6 +88,14 @@ dependencies:
       source:
         type: none
         url: ''
+  - boost:
+      build:
+        buildsystem: custom
+        buildoptions: "./bootstrap.sh --prefix=/opt/usr && ./b2 stage threading=multi link=shared && ./b2 install threading=multi link=shared"
+      depname: boost_1_63_0
+      source:
+        type: bz2
+        url: 'http://downloads.sourceforge.net/project/boost/boost/1.63.0/boost_1_63_0.tar.bz2'
   - asio:
       build:
         buildsystem: custom
