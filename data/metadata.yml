@@ -145,3 +145,11 @@ dependencies:
       source:
         type: none
         url: ''
+  - gtk3:
+      build:
+        buildsystem: make
+        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-static --disable-wayland-backend"
+      depname: gtk+-3.22.10
+      source:
+        type: xz
+        url: 'http://ftp.gnome.org/pub/gnome/sources/gtk+/3.22/gtk+-3.22.10.tar.xz'
