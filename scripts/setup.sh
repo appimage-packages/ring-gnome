@@ -22,7 +22,7 @@ export WORKSPACE=`pwd`
 echo $WORKSPACE
 add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt-get update && apt-get -y install gcc-4.9 g++-4.9
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
-add-apt-repository -y ppa:gnome3-team/gnome3-staging
-apt-get update
+sudo add-apt-repository ppa:jonathonf/gtk3.16
+sudo apt-get update
 
 cd /in/ && rspec appimage-template/spec/recipe_rspec.rb --fail-fast
