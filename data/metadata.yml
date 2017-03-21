@@ -25,8 +25,6 @@ packages:
   - libgnutls-dev
   - libjsoncpp-dev
   - libva-dev
-  - libgtk-3-0
-  - libgtk-3-dev
   - libclutter-gtk-1.0-0
   - gnome-icon-theme-symbolic
   - libebook-1.2-14
@@ -149,7 +147,7 @@ dependencies:
   - gtk3:
       build:
         buildsystem: make
-        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-static --disable-wayland-backend"
+        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-shared --enable-static --disable-wayland-backend"
       depname: gtk+-3.16.6
       source:
         type: xz
