@@ -16,7 +16,7 @@ else
 fi
 
 if cd ffmpeg; then
-	 ./configure --prefix="/opt/usr" --extra-ldflags="-L/opt/usr//lib -lstdc++ -lm -lrt -ldl" --extra-cflags="-I/opt/usr/include" --pkg-config-flags="--static" --enable-shared --enable-avfilter \
+	 ./configure --prefix="/opt/usr" --extra-ldflags="-L/opt/usr//lib -lstdc++ -lm -lrt -ldl" --extra-cflags="-I/opt/usr/include" --pkg-config-flags="--static" --enable-static --enable-avfilter \
 	 --enable-gpl --enable-avresample --enable-avutil --enable-libx265 --enable-libvpx --enable-libx264 --disable-doc && \
 	  make -j4 && make install
 else

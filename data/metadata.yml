@@ -13,7 +13,6 @@ packages:
   - libexpat1-dev
   - libpcre3-dev
   - libyaml-cpp-dev
-  - libboost-dev
   - libdbus-c++-dev
   - libsndfile1-dev
   - libsrtp-dev
@@ -25,7 +24,6 @@ packages:
   - libgnutls-dev
   - libjsoncpp-dev
   - libva-dev
-  - libclutter-gtk-1.0-0
   - gnome-icon-theme-symbolic
   - libebook-1.2-14
   - libnotify4
@@ -90,7 +88,7 @@ dependencies:
   - boost:
       build:
         buildsystem: custom
-        buildoptions: "./bootstrap.sh --prefix=/opt/usr && ./b2 stage threading=multi link=shared && ./b2 install threading=multi link=shared"
+        buildoptions: "./bootstrap.sh --prefix=/opt/usr && ./b2 stage threading=multi link=static && ./b2 install threading=multi link=static"
       depname: boost_1_63_0
       source:
         type: bz2
@@ -98,7 +96,7 @@ dependencies:
   - asio:
       build:
         buildsystem: custom
-        buildoptions: 'cd asio && ./autogen.sh && ./configure --prefix=/opt/usr && make V=1 -j8 && make install'
+        buildoptions: 'cd asio && ./autogen.sh && ./configure --prefix=/opt/usr --enable-static && make V=1 -j8 && make install'
       depname: asio
       source:
         type: git
@@ -116,7 +114,7 @@ dependencies:
   - restbed:
       build:
         buildsystem: cmake
-        buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=ON'
+        buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=OFF'
       depname: restbed
       source:
         type: git
@@ -147,8 +145,25 @@ dependencies:
   - gtk3:
       build:
         buildsystem: make
-        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-shared --enable-static --disable-wayland-backend"
+        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-static --disable-wayland-backend"
       depname: gtk+-3.16.6
       source:
         type: xz
         url: 'http://ftp.gnome.org/pub/gnome/sources/gtk+/3.16/gtk+-3.16.6.tar.xz'
+  - clutter-gtk:
+      build:
+        buildsystem: autogen
+        buildoptions: '--prefix=/opt/usr --enable-static'
+      depname: clutter-gtk
+      source:
+        type: git
+        url: https://github.com/GNOME/clutter-gtk
+        branch: master
+  - evolution-data-server:
+      build:
+        buildsystem: make
+        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-static"
+      depname: evolution-data-server-3.16.5
+      source:
+        type: xz
+        url: 'ftp://ftp.gnome.org/pub/gnome/sources/evolution-data-server/3.16/evolution-data-server-3.16.5.tar.xz'
