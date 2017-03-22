@@ -28,6 +28,7 @@ packages:
   - libebook-1.2-14
   - libnotify4
   - libcups2-dev
+  - libgcr-3-dev
 frameworks:
   build_kf5: false
   frameworks:
