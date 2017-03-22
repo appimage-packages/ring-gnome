@@ -4,9 +4,9 @@ set -x
 export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/library:/opt/usr/lib/x86_64-linux-gnu:/usr/lib:/usr/lib64
 export PKG_CONFIG="pkg-config --static"
 export CPATH=/opt/usr/include:/opt/usr/include/gtk-3.0/gtk:/opt/usr/include/corvusoft:/opt/usr/include/boost/system:/opt/usr/include/boost:/usr/include
-export CFLAGS="$(pkg-config --cflags --static gtk+-3.0 libavdevice libavfilter libavformat libavcodec libavresample libswscale libavutil) $CFLAGS"
+export CFLAGS="$(pkg-config --cflags --static gtk+-3.0 libavdevice libavfilter libavformat libavcodec libavresample libswscale libavutil restbed) $CFLAGS"
 echo $CFLAGS
-export LDFLAGS="$(pkg-config --libs --static gtk+-3.0 libavdevice libavfilter libavformat libavcodec libavresample libswscale libavutil) $LDFLAGS"
+export LDFLAGS="$(pkg-config --libs --static gtk+-3.0 libavdevice libavfilter libavformat libavcodec libavresample libswscale libavutil restbed) $LDFLAGS"
 echo $LDFLAGS
 cd contrib
 
