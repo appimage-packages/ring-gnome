@@ -5,6 +5,9 @@ export LD_LIBRARY_PATH=/opt/usr/lib:/opt/usr/library:/opt/usr/lib/x86_64-linux-g
 export PKG_CONFIG="pkg-config --static"
 export CPATH=/opt/usr/include:/opt/usr/include/gtk-3.0/gtk:/opt/usr/include/corvusoft:/opt/usr/include/boost/system:/opt/usr/include/boost:/usr/include
 export LDFLAGS="-L/opt/usr/library -L/opt/usr/lib $LDFLAGS"
+export PKG_CONFIG_PATH=/opt/usr/lib/pkgconfig:$PKG_CONFIG_PATH
+
+echo $PKG_CONFIG_PATH
 
 pkg-config --exists gtk+-3.0
 echo $?
