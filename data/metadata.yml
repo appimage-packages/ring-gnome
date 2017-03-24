@@ -97,7 +97,7 @@ dependencies:
   - asio:
       build:
         buildsystem: custom
-        buildoptions: 'cd asio && ./autogen.sh && ./configure --prefix=/opt/usr --enable-static && make V=1 -j8 && make install'
+        buildoptions: 'cd asio && ./autogen.sh && ./configure --prefix=/opt/usr --enable-shared && make V=1 -j8 && make install'
       depname: asio
       source:
         type: git
@@ -115,7 +115,7 @@ dependencies:
   - restbed:
       build:
         buildsystem: cmake
-        buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=OFF'
+        buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DBUILD_TESTS=NO -DBUILD_EXAMPLES=NO -DBUILD_SSL=NO -DBUILD_SHARED=ON'
       depname: restbed
       source:
         type: git
