@@ -25,7 +25,7 @@ fi
 
 cd ../../
 if ./autogen.sh; then
-./configure --prefix=/opt/usr
+./configure --prefix=/opt/usr --enable-static
 make
 make install
 
