@@ -38,7 +38,7 @@ node('linux') {
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ring-gnome']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://gerrit-ring.savoirfairelinux.com/ring-daemon']]]
        }
         stage( 'Setup' ) {
-            sh 'bundle install'
+            sh 'rbenv local 2.3.0 && bundle install'
             def WORKSPACE=pwd()
         }
         stage( 'Build' ) {
