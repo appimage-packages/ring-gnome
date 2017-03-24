@@ -89,7 +89,7 @@ dependencies:
   - boost:
       build:
         buildsystem: custom
-        buildoptions: "./bootstrap.sh --prefix=/opt/usr && ./b2 stage threading=multi link=static && ./b2 install threading=multi link=static"
+        buildoptions: "./bootstrap.sh --prefix=/opt/usr && ./b2 stage threading=multi link=shared && ./b2 install threading=multi link=shared"
       depname: boost_1_63_0
       source:
         type: bz2
