@@ -146,7 +146,7 @@ dependencies:
   - gtk3:
       build:
         buildsystem: make
-        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-static --disable-wayland-backend"
+        buildoptions: "--prefix=/opt/usr --sysconfdir=/opt/etc --enable-broadway-backend  --enable-x11-backend --enable-shared --disable-wayland-backend"
       depname: gtk+-3.16.6
       source:
         type: xz
